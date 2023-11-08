@@ -1,0 +1,122 @@
+{# specify absolute url for the static assets folder e.g. http://wwww.domain.com/assets #}
+{%- set assetUrl = assetUrl | default(assetPath) -%}
+<!DOCTYPE html>
+<html lang="{{ htmlLang | default('en') }}" class="{{ htmlClasses }}">
+	<head>
+		<meta charset="utf-8">
+		<title{% if pagetitlelang %} lang="{{ pageTitleLang }}" {% endif %}>
+			{% block pageTitle %}The Scottish Government - gov.scot{% endblock %}
+		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="theme-color" content="{{ themeColor | default('#ffffff') }}">
+		{# Ensure that older IE versions always render with the correct rendering engine #}
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		{% block stylesheets %}
+			<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,400italic&amp;display=swap" rel="stylesheet" type="text/css">
+			<link href="/public/stylesheets/application.css" rel="stylesheet" type="text/css" />
+
+			{% for stylesheetUrl in pluginConfig.stylesheets %}
+				<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+			{% endfor %}
+		{% endblock %}
+		<meta property="og:image" content="{{ assetUrl | default('/assets') }}/images/govuk-opengraph-image.png">
+	</head>
+	<body class="{{ bodyClasses }}" {%- for attribute, value in bodyAttributes %} {{attribute}}="{{value}}" {% endfor %}>
+		<script>
+			var htmlClass = document.documentElement.getAttribute('class') || '';
+			document.documentElement.setAttribute('class', (htmlClass ? htmlClass + ' ' : '') + 'js-enabled');
+		</script>
+		<div class="ds_page">
+			<div class="ds_page__top">
+				{% block bodyStart %}{% endblock %}
+
+				<div class="ds_skip-links">
+					<ul class="ds_skip-links__list">
+						<li class="ds_skip-links__item">
+							<a class="ds_skip-links__link" href="#main-content">Skip to main content</a>
+						</li>
+					</ul>
+				</div>
+
+				{% block header %}
+					<header class="ds_site-header ds_site-header--gradient" role="banner">
+						<div class="ds_wrapper">
+							<div class="ds_site-header__content">
+								<div class="ds_site-branding">
+									<a class="ds_site-branding__logo  ds_site-branding__link" href="/">
+										<img class="ds_site-branding__logo-image" src="/plugin-assets/scotgov-prototype-plugin/src/images/logos/scottish-government.svg" alt="Scottish Government" />
+									</a>
+
+									{% if serviceName %}
+									<div class="ds_site-branding__title">
+										{{ serviceName }}
+									</div>
+									{% endif %}
+								</div>
+
+							</div>
+						</div>
+					</header>
+				{% endblock %}
+			</div>
+
+			<div class="ds_page__middle">
+				{% block main %}
+					<div class="ds_wrapper {{ containerClasses }}">
+						{% block beforeContent %}{% endblock %}
+						<main class="ds_layout {{ mainClasses | default('ds_layout--article') }}" id="main-content" role="main" {% if mainLang %} lang="{{ mainLang }}" {% endif %}>
+							{% block content %}{% endblock %}
+						</main>
+					</div>
+				{% endblock %}
+			</div>
+
+			<div class="ds_back-to-top" data-module="ds-back-to-top">
+				<a href="#" class="ds_back-to-top__button">Back to top
+					<svg class="ds_icon  ds_back-to-top__icon" aria-hidden="true" role="img">
+						<use xlink:href="/plugin-assets/scotgov-prototype-plugin/src/images/icons/icons.stack.svg#arrow_up"></use>
+					</svg>
+				</a>
+			</div>
+
+			<div class="ds_page__bottom">
+				{% block footer %}
+					<footer class="ds_site-footer">
+						<div class="ds_wrapper">
+							<div class="ds_site-footer__content">
+								<ul class="ds_site-footer__site-items">
+									{% if (GOVUKPrototypeKit.isDevelopment) %}
+									<li class="ds_site-items__item">
+										<a href="/manage-prototype">Manage your prototype</a>
+									</li>
+									{% endif %}
+									<li class="ds_site-items__item">
+										<a href="/manage-prototype/clear-data">Clear data</a>
+									</li>
+								</ul>
+
+								<div class="ds_site-footer__copyright">
+									<a class="ds_site-footer__copyright-logo" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">
+										<img src="/plugin-assets/scotgov-prototype-plugin/src/images/logos/ogl.svg" alt="Open Government License"/>
+									</a>
+									<p>All content is available under the
+										<a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, except for graphic assets and where otherwise stated</p>
+									<p>&copy; Crown Copyright</p>
+								</div>
+
+								<div class="ds_site-footer__org">
+									<a class="ds_site-footer__org-link" title="The Scottish Government" href="http://www.gov.scot/">
+										<img class="ds_site-footer__org-logo" src="/plugin-assets/scotgov-prototype-plugin/src/images/logos/scottish-government--min.svg" alt="gov.scot"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</footer>
+				{% endblock %}
+			</div>
+
+			{% block bodyEnd %}{% endblock %}
+		</div>
+	</body>
+</html>

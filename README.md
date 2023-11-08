@@ -1,36 +1,10 @@
-# Digital Scotland Design System
+# GOV.UK Prototype Kit plugin for the Scottish Government Design System
 
-This repository contains all the code needed to start building user interfaces for websites and web applications for the Scottish Government and other Scottish public sector bodies.
+This is an unofficial fork of the [Scottish Government Design System](https://github.com/scottish-government-design-system/design-system) updated to work as a plugin for the [GOV.UK Prototype Kit](https://github.com/alphagov/govuk-prototype-kit).
 
-See live examples of the available components, alongside guidance on how and when to use them in the [Digital Scotland Design System](https://designsystem.gov.scot/).
+## Usage
 
-## Feedback, help or support
-
-If you need any help or want to give any feedback you can e-mail the Design System team at: [designsystem@gov.scot](mailto:designsystem@gov.scot).
-
-## How to use in your project
-
-We recommend [installing the package using node package manager (npm)](https://designsystem.gov.scot/get-started/installation/).
-
-### Install
-
-To install your own local copy of the package follow these steps:
-
-1. Ensure you have [node.js](https://nodejs.org/en/) installed. We recommend using the latest Long Term Support (LTS) version, or a minimum of version 8.10.0.
-2. Run the command `npm install @scottish-government/design-system` in your chosen directory. This will install the project and its dependencies.
-
-### Run tasks
-
-Once installed the following tasks can be run:
-
-#### Build production files
-
-These are the optimised CSS, JavaScript files and static assets that should be included in your project.
-
-Run:
-
-```
-npm run prepack
-```
-
-This will compile the various files and conduct a series of automated tests and update the contents of the `/dist` directory with the newly generated files.
+Once you have a version of the Prototype Kit installed,
+- open a terminal window at that folder and run `npm i scotgov-prototype-plugin`
+- create a `settings.scss` file in `app/assets/sass` and add `$govuk-global-styles: false;` to it
+- open `app/views/layouts/main.html` and change the line `{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}` to `{% extends "/scotgov-prototype-plugin/scotgov-template.njk" %}`

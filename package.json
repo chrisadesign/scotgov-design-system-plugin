@@ -1,15 +1,13 @@
 {
-  "name": "@scottish-government/design-system",
-  "description": "Design System for Scottish public sector websites",
-  "version": "1.0.0",
+  "name": "scotgov-prototype-plugin",
+  "description": "GOV.UK Prototype Kit plugin for the Scottish Government Design System",
+  "version": "0.0.1",
   "author": {
-    "name": "Scottish Government Digital Design system team",
-    "email": "designsystem@gov.scot",
-    "url": "https://github.com/scottish-government-design-system/design-system"
+    "name": "Chris Armstrong",
+    "url": "https://github.com/chrisadesign/scotgov-design-system-plugin"
   },
   "license": "MIT",
   "scripts": {
-    "prepack": "rm -rf ./dist; npm run test && npm run webpack && npm run sass && npm run sass-min && npm run svgsprite",
     "sass": "sass --style=expanded src/design-system.scss dist/css/design-system.css",
     "sass-min": "sass --style=compressed src/design-system.scss dist/css/design-system.min.css",
     "svgsprite": "node ./svg-sprite",

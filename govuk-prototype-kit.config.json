@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "description": "GOV.UK Prototype Kit plugin for the Scottish Government Design System"
+  },
+  "assets": [
+    "/src/images/"
+  ],
+  "nunjucksPaths": [
+    "/nunjucks"
+  ],
+  "sass": [
+    "/src/design-system.scss"
+  ],
+  "scripts": [
+    "/src/all.js",
+    "/src/init-all.js"
+  ]
+}
