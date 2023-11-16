@@ -14,5 +14,22 @@
   "scripts": [
     "/src/all.js",
     "/src/init-all.js"
+  ],
+  "templates": [
+    {
+      "path": "/nunjucks/scotgov-prototype-plugin/scotgov-main.html",
+      "name": "1. Required, this has the main layout structure. Install as /layouts/scotgov-main",
+      "type": "nunjucks"
+    },
+    {
+      "path": "/nunjucks/scotgov-prototype-plugin/scotgov-article.html",
+      "name": "Article page",
+      "type": "nunjucks"
+    },
+    {
+      "path": "/nunjucks/scotgov-prototype-plugin/scotgov-guide.html",
+      "name": "Guide page",
+      "type": "nunjucks"
+    }
   ]
 }

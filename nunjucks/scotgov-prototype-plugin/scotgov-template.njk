@@ -40,18 +40,19 @@
 				</div>
 
 				{% block header %}
-					<header class="ds_site-header ds_site-header--gradient" role="banner">
+					<header class="ds_site-header" role="banner">
 						<div class="ds_wrapper">
 							<div class="ds_site-header__content">
+
 								<div class="ds_site-branding">
 									<a class="ds_site-branding__logo  ds_site-branding__link" href="/">
 										<img class="ds_site-branding__logo-image" src="/plugin-assets/scotgov-prototype-plugin/src/images/logos/scottish-government.svg" alt="Scottish Government" />
 									</a>
 
 									{% if serviceName %}
-									<div class="ds_site-branding__title">
-										{{ serviceName }}
-									</div>
+										<div class="ds_site-branding__title">
+											{{ serviceName }}
+										</div>
 									{% endif %}
 								</div>
 
@@ -65,7 +66,7 @@
 				{% block main %}
 					<div class="ds_wrapper {{ containerClasses }}">
 						{% block beforeContent %}{% endblock %}
-						<main class="ds_layout {{ mainClasses | default('ds_layout--article') }}" id="main-content" role="main" {% if mainLang %} lang="{{ mainLang }}" {% endif %}>
+						<main class="ds_layout {{ mainClasses }}" id="main-content" role="main" {% if mainLang %} lang="{{ mainLang }}" {% endif %}>
 							{% block content %}{% endblock %}
 						</main>
 					</div>

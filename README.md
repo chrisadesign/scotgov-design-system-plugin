@@ -4,7 +4,10 @@ This is an unofficial fork of the [Scottish Government Design System](https://gi
 
 ## Usage
 
-Once you have a version of the Prototype Kit installed,
-- open a terminal window at that folder and run `npm i scotgov-prototype-plugin`
-- create a `settings.scss` file in `app/assets/sass` and add `$govuk-global-styles: false;` to it
-- open `app/views/layouts/main.html` and change the line `{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}` to `{% extends "/scotgov-prototype-plugin/scotgov-template.njk" %}`
+Once you have a copy of the Prototype Kit installed,
+1. open a terminal window at that folder and run **npm i scotgov-prototype-plugin**
+2. run **npm run dev** as usual
+3. create a **settings.scss** file in **app/assets/sass** and add **$govuk-global-styles: false;** to it
+4. in the browser, navigate to the **Manage your prototype** section and go to **Templates**
+5. create the required main layout at **/layouts/scotgov-main**
+6. create and use one of the other templates as a basis for your prototype

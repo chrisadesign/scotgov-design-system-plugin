@@ -1,7 +1,7 @@
 {
   "name": "scotgov-prototype-plugin",
   "description": "GOV.UK Prototype Kit plugin for the Scottish Government Design System",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": {
     "name": "Chris Armstrong",
     "url": "https://github.com/chrisadesign/scotgov-design-system-plugin"
