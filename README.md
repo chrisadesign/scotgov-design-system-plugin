@@ -10,4 +10,4 @@ Once you have a copy of the Prototype Kit installed,
 3. create a **settings.scss** file in **app/assets/sass** and add **$govuk-global-styles: false;** to it
 4. in the browser, navigate to the **Manage your prototype** section and go to **Templates**
 5. create the required main layout at **/layouts/scotgov-main**
-6. create and use one of the other templates as a basis for your prototype
+6. create and use one of the other templates as a basis for your prototype.
