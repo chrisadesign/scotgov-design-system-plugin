@@ -1,3 +1,5 @@
+> This is depreceated now, there's an official [ScotGov prototype kit templates package](https://github.com/scottish-government-design-system/prototype-templates/tree/main).
+
 # GOV.UK Prototype Kit plugin for the Scottish Government Design System
 
 This is an unofficial fork of the [Scottish Government Design System](https://github.com/scottish-government-design-system/design-system) updated to work as a plugin for the [GOV.UK Prototype Kit](https://github.com/alphagov/govuk-prototype-kit).
